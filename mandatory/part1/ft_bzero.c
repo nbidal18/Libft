@@ -6,23 +6,34 @@
 /*   By: nbidal <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 21:36:15 by nbidal            #+#    #+#             */
-/*   Updated: 2023/12/19 21:43:22 by nbidal           ###   ########.fr       */
+/*   Updated: 2023/12/22 18:15:35 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
+//#include <stdio.h>
 
 void bzero(void *s, size_t n)
 {
-	unsigned char *p;
-	size_t i;
+	char *t;
 
-	p = s;
-	i = 0;
-
-	while (i < n)
+	t = (char *)s;
+	if (n < 1)
+		return 0;
+	while (n--)
 	{
-		p[i] = 0;
-		i++;
+		*t = 0;
+		t++;
 	}
 }
+
+/*
+int main()
+{
+    char array[20] = "Hello, World!";
+    printf("Array prima: %s\n", array);
+	bzero(array, 3);
+    printf("Array dopo: %s\n", array);
+    return 0;
+}
+*/

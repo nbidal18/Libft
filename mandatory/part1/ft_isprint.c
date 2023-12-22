@@ -6,7 +6,7 @@
 /*   By: nbidal <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 16:04:36 by nbidal            #+#    #+#             */
-/*   Updated: 2023/12/20 16:47:15 by nbidal           ###   ########.fr       */
+/*   Updated: 2023/12/22 17:14:53 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,3 +21,13 @@ int	ft_isprint(unsigned char c)
 		return 0;
 	}
 }
+
+/*
+int main()
+{
+	char c = 'h';
+	int result = ft_isprint(c);
+	printf("Result: %d\n", result);
+	return 0;
+}
+*/
