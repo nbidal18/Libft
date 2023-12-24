@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nbidal <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/20 14:53:47 by nbidal            #+#    #+#             */
-/*   Updated: 2023/12/22 18:15:47 by nbidal           ###   ########.fr       */
+/*   Created: 2023/12/24 19:16:57 by nbidal            #+#    #+#             */
+/*   Updated: 2023/12/24 19:16:58 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-//#include <stdio.h>
+#include "libft.h"
 
 void *memmove(void *dst, const void *src, size_t len)
 {

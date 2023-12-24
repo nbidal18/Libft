@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nbidal <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/20 15:47:08 by nbidal            #+#    #+#             */
-/*   Updated: 2023/12/22 18:19:56 by nbidal           ###   ########.fr       */
+/*   Created: 2023/12/24 19:16:46 by nbidal            #+#    #+#             */
+/*   Updated: 2023/12/24 19:16:47 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-//#include <stdio.h>
+#include "libft.h"
 
 size_t strlcpy(char * restrict dst, const char * restrict src, size_t dstsize)
 {
@@ -42,7 +41,6 @@ size_t strlcpy(char * restrict dst, const char * restrict src, size_t dstsize)
 	*d = '\0';
 	return srclen;
 }
-
 /*
 int main()
 {

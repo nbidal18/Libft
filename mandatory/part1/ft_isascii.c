@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nbidal <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/19 15:55:07 by nbidal            #+#    #+#             */
-/*   Updated: 2023/12/22 17:14:48 by nbidal           ###   ########.fr       */
+/*   Created: 2023/12/24 19:17:06 by nbidal            #+#    #+#             */
+/*   Updated: 2023/12/24 19:17:07 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include "libft.h"
 
 int	ft_isascii(unsigned char c)
 {
