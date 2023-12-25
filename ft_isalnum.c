@@ -6,26 +6,19 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 19:17:10 by nbidal            #+#    #+#             */
-/*   Updated: 2023/12/24 19:17:11 by nbidal           ###   ########.fr       */
+/*   Updated: 2023/12/25 14:24:48 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(unsigned char c)
+int	ft_isalnum(int c)
 {
 	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-	{
-		return 1;
-	}
+		return (1);
 	else if (c >= '0' && c <= '9')
-	{
-		return 1;
-	}
-	else
-	{
-		return 0;
-	}
+		return (1);
+	return (0);
 }
 
 /*

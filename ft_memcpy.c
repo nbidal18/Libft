@@ -6,39 +6,51 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 19:17:00 by nbidal            #+#    #+#             */
-/*   Updated: 2023/12/24 19:17:01 by nbidal           ###   ########.fr       */
+/*   Updated: 2023/12/25 14:26:23 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *memcpy(void *restrict dst, const void *restrict src, size_t n)
+static void	overlapno(char *d, const char *s, size_t n)
 {
-	char *d;
-	const char *s;
+	while (n--)
+	{
+		*d = *s;
+		d++;
+		s++;
+	}
+}
+
+static void	overlapyes(char *d, const char *s, size_t n)
+{
+	d += n;
+	s += n;
+	while (n--)
+	{
+		*d = *s;
+		d--;
+		s--;
+	}
+}
+
+void	*memcpy(void *restrict dst, const void *restrict src, size_t n)
+{
+	char		*d;
+	const char	*s;
 
 	d = dst;
 	s = src;
-	if (n < 1)
-		return 0;
-    if ((d + n) < s || d >= s + n) {
-        while (n--) {
-			*d = *s;
-			d++;
-			s++;
-        }
-    } else {
-        d += n;
-        s += n;
-        while (n--) {
-            *d = *s;
-			d--;
-			s--;
-        }
-    }
-    return dst;
+	if ((d + n) < s || d >= s + n)
+	{
+		overlapno(d, s, n);
+	}
+	else
+	{
+		overlapyes(d, s, n);
+	}
+	return (dst);
 }
-
 
 /*
 int main()

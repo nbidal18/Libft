@@ -6,25 +6,23 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 19:16:55 by nbidal            #+#    #+#             */
-/*   Updated: 2023/12/24 19:16:56 by nbidal           ###   ########.fr       */
+/*   Updated: 2023/12/25 14:26:45 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *memset(void *s, int c, size_t n)
+void	*memset(void *s, int c, size_t n)
 {
-	char *p;
+	char	*p;
 
 	p = s;
-	if (n < 1)
-		return 0;
-	while(n--)
+	while (n--)
 	{
 		*p = (unsigned char)c;
 		p++;
 	}
-	return s;
+	return (s);
 }
 
 /*

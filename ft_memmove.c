@@ -6,34 +6,29 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 19:16:57 by nbidal            #+#    #+#             */
-/*   Updated: 2023/12/24 19:16:58 by nbidal           ###   ########.fr       */
+/*   Updated: 2023/12/25 14:26:34 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *memmove(void *dst, const void *src, size_t len)
+void	*memmove(void *dst, const void *src, size_t len)
 {
-	char *d;
-	const char *s;
-	char tmp[len];
-	int i;
+	char		*d;
+	const char	*s;
+	char		tmp;
+	size_t		i;
 
 	d = dst;
 	s = src;
 	i = 0;
-	while(i < len)
+	while ((i < len) && (s[i] != '\0') && (d[i] != '\0'))
 	{
-		tmp[i] = s[i];
+		tmp = s[i];
+		d[i] = tmp;
 		i++;
 	}
-	i = 0;
-	while(i < len)
-	{
-		d[i] = tmp[i];
-		i++;
-	}
-	return dst;
+	return (dst);
 }
 
 /*
