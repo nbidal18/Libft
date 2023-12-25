@@ -6,13 +6,13 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 19:16:57 by nbidal            #+#    #+#             */
-/*   Updated: 2023/12/25 14:26:34 by nbidal           ###   ########.fr       */
+/*   Updated: 2023/12/25 14:38:23 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*memmove(void *dst, const void *src, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	char		*d;
 	const char	*s;
@@ -37,7 +37,7 @@ int main()
     char array1[20] = "Hello, World!";
     char array2[20] = "Ciao, Mondo!";
 	printf("dst prima: %s\n", array2);
-	char *result = memmove(array2, array1, 2);
+	char *result = ft_memmove(array2, array1, 2);
     printf("dst dopo: %s\n", result);
     return 0;
 }
