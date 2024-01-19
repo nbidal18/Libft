@@ -6,49 +6,27 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 19:16:46 by nbidal            #+#    #+#             */
-/*   Updated: 2023/12/25 14:38:48 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/01/19 10:36:26 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	strlen(const char *s, size_t *srclen)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	int	slen;
+	size_t	i;
 
-	slen = (int)*srclen;
-	while (s[slen] != '\0')
-	{
-		slen++;
-	}
-	*srclen = (size_t)slen;
-}
-
-size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize)
-{
-	char		*d;
-	const char	*s;
-	size_t		srclen;
-	size_t		i;
-
-	d = dst;
-	s = src;
+	if (size == 0)
+		return (ft_strlen(src));
 	i = 0;
-	srclen = 0;
-	if ((*s == '\0') || (dstsize < 1))
+	while (src[i] != '\0' && i < (size - 1))
 	{
-		strlen(s, &srclen);
-		i = 0;
-		while ((*s != '\0') && (i < (dstsize - 1)))
-		{
-			*d = *s;
-			d++;
-			s++;
-			i++;
-		}
-		*d = '\0';
+		dst[i] = src[i];
+		i++;
 	}
-	return (srclen);
+	if (dst[i] != '\0')
+		dst[i] = '\0';
+	return (ft_strlen(src));
 }
 
 /*
