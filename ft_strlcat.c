@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nizarbidal <nizarbidal@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:59:58 by nbidal            #+#    #+#             */
-/*   Updated: 2024/01/23 16:54:48 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/01/23 18:57:55 by nizarbidal       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "stdio.h"
+//#include "stdio.h"
 
-
+/*
 int	ft_strlen(const char *s)
 {
 	int	i;
@@ -23,6 +23,7 @@ int	ft_strlen(const char *s)
 		i++;
 	return (i);
 }
+*/
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
@@ -52,6 +53,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	return (lensrc + (lendst));
 }
 
+/*
 int main()
 {
     char s[30] = "lorem ipsum dolor sit amet";
@@ -61,4 +63,4 @@ int main()
     printf("Tried to copy %zu characters, Modified dst: %s\n", result, d);
     return 0;
 }
-
+*/
