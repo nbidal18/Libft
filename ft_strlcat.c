@@ -6,7 +6,7 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:59:58 by nbidal            #+#    #+#             */
-/*   Updated: 2024/01/27 10:13:33 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/01/27 10:15:06 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 		dst[j] = '\0';
 	}
 	return (lendst + lensrc);
+}
 
 /*
 int main()
