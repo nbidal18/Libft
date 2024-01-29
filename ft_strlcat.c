@@ -6,7 +6,7 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:59:58 by nbidal            #+#    #+#             */
-/*   Updated: 2024/01/27 10:15:06 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/01/29 13:36:29 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,22 @@ int	ft_strlen(const char *s)
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t	lendst;
-	size_t	lensrc;
-	size_t	i;
-	size_t	j;
+	int	lendst;
+	int	lensrc;
+	int	i;
+	int	j;
+	int	limit;
 
 	lendst = ft_strlen(dst);
 	lensrc = ft_strlen(src);
 	i = 0;
 	j = lendst;
-	if (!(dstsize < 1))
+	limit = dstsize - lendst - 1;
+	if (dstsize == 0)
+		return (lensrc);
+	if (!(limit < 1))
 	{
-		while (src[i] && (i < (dstsize - lendst - 1)))
+		while (src[i] && (i < limit))
 		{
 			dst[j] = src[i];
 			i++;
@@ -46,16 +50,18 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 		}
 		dst[j] = '\0';
 	}
+	printf("lendst, %i\n", lendst);
+	printf("lensrc, %i\n", lensrc);
 	return (lendst + lensrc);
 }
+
 
 /*
 int main()
 {
-	char src[7] = "mondo";
-	char dst[10] = "ciao";
+	char dst[10] = "a";
 	printf("Original dst: %s\n", dst);
-	size_t result = ft_strlcat(dst, src, 10);
+	size_t result = ft_strlcat(dst, "lorem ipsum dolor sit amet", 1);
 	printf("Tried to copy %zu characters, Modified dst: %s\n", result, dst);
 }
 */
