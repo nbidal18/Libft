@@ -6,7 +6,7 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:59:58 by nbidal            #+#    #+#             */
-/*   Updated: 2024/01/29 13:58:18 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/01/29 14:08:42 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,16 +40,13 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	limit = dstsize - lendst - 1;
 	if (dstsize <= 0)
 		return (lensrc);
-	if (!(limit < 1))
+	while (!(limit < 1) && src[i] && (i < limit))
 	{
-		while (src[i] && (i < limit))
-		{
-			dst[j] = src[i];
-			i++;
-			j++;
-		}
-		dst[j] = '\0';
+		dst[j] = src[i];
+		i++;
+		j++;
 	}
+	dst[j] = '\0';
 	if ((i < lensrc) && !(((int)dstsize > lendst)))
 		return (lensrc + dstsize);
 	return (lendst + lensrc);
