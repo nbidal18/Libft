@@ -6,7 +6,7 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:59:58 by nbidal            #+#    #+#             */
-/*   Updated: 2024/01/29 13:36:29 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/01/29 13:58:18 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	i = 0;
 	j = lendst;
 	limit = dstsize - lendst - 1;
-	if (dstsize == 0)
+	if (dstsize <= 0)
 		return (lensrc);
 	if (!(limit < 1))
 	{
@@ -50,18 +50,17 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 		}
 		dst[j] = '\0';
 	}
-	printf("lendst, %i\n", lendst);
-	printf("lensrc, %i\n", lensrc);
+	if ((i < lensrc) && !(((int)dstsize > lendst)))
+		return (lensrc + dstsize);
 	return (lendst + lensrc);
 }
-
 
 /*
 int main()
 {
 	char dst[10] = "a";
 	printf("Original dst: %s\n", dst);
-	size_t result = ft_strlcat(dst, "lorem ipsum dolor sit amet", 1);
+	size_t result = ft_strlcat(dst, "lorem ipsum dolor sit amet", 15);
 	printf("Tried to copy %zu characters, Modified dst: %s\n", result, dst);
 }
 */
