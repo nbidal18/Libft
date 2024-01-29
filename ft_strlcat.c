@@ -6,7 +6,7 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:59:58 by nbidal            #+#    #+#             */
-/*   Updated: 2024/01/29 14:08:42 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/01/29 14:38:57 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,23 +31,21 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	int	lensrc;
 	int	i;
 	int	j;
-	int	limit;
 
 	lendst = ft_strlen(dst);
 	lensrc = ft_strlen(src);
 	i = 0;
 	j = lendst;
-	limit = dstsize - lendst - 1;
-	if (dstsize <= 0)
+	if (dstsize == 0)
 		return (lensrc);
-	while (!(limit < 1) && src[i] && (i < limit))
+	while ((src[i] && (i < (int)dstsize - (int)lendst - 1)))
 	{
 		dst[j] = src[i];
 		i++;
 		j++;
 	}
 	dst[j] = '\0';
-	if ((i < lensrc) && !(((int)dstsize > lendst)))
+	if ((i < lensrc) && !((int)dstsize > lendst) && ((int)dstsize > 0))
 		return (lensrc + dstsize);
 	return (lendst + lensrc);
 }
@@ -55,9 +53,9 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 /*
 int main()
 {
-	char dst[10] = "a";
+	char dst[30] = "CCCCC";
 	printf("Original dst: %s\n", dst);
-	size_t result = ft_strlcat(dst, "lorem ipsum dolor sit amet", 15);
+	size_t result = ft_strlcat(dst, "AAAAAAAAA", -1);
 	printf("Tried to copy %zu characters, Modified dst: %s\n", result, dst);
 }
 */
