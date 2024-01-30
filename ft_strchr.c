@@ -6,7 +6,7 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 13:14:14 by nbidal            #+#    #+#             */
-/*   Updated: 2024/01/30 13:50:22 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/01/30 14:51:15 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,11 @@ char	*ft_strchr(const char *s, int c)
 	tmp = (char)c;
 	while (*pos != '\0')
 	{
-		if (*s == tmp)
-			return (pos);
-		pos++;
+		if ((*pos == '\0') || (*pos != tmp))
+			pos++;
+		if (*pos == tmp)
+			return (pos);	
 	}
-	return (0);
+	
+	return (NULL);
 }
