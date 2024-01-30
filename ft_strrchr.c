@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/30 13:14:14 by nbidal            #+#    #+#             */
-/*   Updated: 2024/01/30 15:18:32 by nbidal           ###   ########.fr       */
+/*   Created: 2024/01/30 15:58:36 by nbidal            #+#    #+#             */
+/*   Updated: 2024/01/30 16:07:16 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
 	char	tmp;
 	char	*pos;
