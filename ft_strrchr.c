@@ -6,27 +6,44 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 15:58:36 by nbidal            #+#    #+#             */
-/*   Updated: 2024/01/30 16:07:16 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/01/30 16:29:41 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+int	ft_strlen(const char *s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	return (i);
+}
+*/
+
 char	*ft_strrchr(const char *s, int c)
 {
-	char	tmp;
-	char	*pos;
+	char	cc;
+	char	*ss;
+	int		lens;
 
-	pos = (char *)s;
-	tmp = (char)c;
-	while (*pos != '\0')
+	lens = ft_strlen(s);
+	ss = (char *)s + lens;
+	cc = (char)c;
+	while (lens > 0)
 	{
-		if (*pos != tmp)
-			pos++;
-		if (*pos == tmp)
-			return (pos);
+		if (*ss != cc)
+		{
+			ss--;
+			lens--;
+		}
+		if (*ss == cc)
+			return (ss);
 	}
-	if (tmp == '\0')
-		return (pos);
+	if (cc == '\0')
+		return (ss);
 	return (NULL);
 }
