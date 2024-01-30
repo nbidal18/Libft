@@ -6,12 +6,12 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 18:00:16 by nbidal            #+#    #+#             */
-/*   Updated: 2024/01/30 18:59:33 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/01/30 19:13:48 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
+#include <stdio.h>
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
@@ -20,17 +20,30 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	i = 0;
 	while (i < n && (s1[i] != '\0' || s2[i] != '\0'))
 	{
-		if ((s1[i] > s2[i]) || (s1[i] != '\0' && s2[i] == '\0'))
-			return (1);
-		else if ((s1[i] < s2[i]) || (s1[i] == '\0' && s2[i] != '\0'))
-			return (-1);
+		if ((s1[i] >= 0 && s1[i] <= 127) && (s2[i] >= 0 && s2[i] <= 127))
+		{
+			if ((s1[i] > s2[i]) || (s1[i] != '\0' && s2[i] == '\0'))
+				return (1);
+			else if ((s1[i] < s2[i]) || (s1[i] == '\0' && s2[i] != '\0'))
+				return (-1);
+		}
+		else
+		{
+			if (s1[i] > s2[i])
+				return (1);
+			else if (s1[i] < s2[i])
+			{
+				printf("here %zu\n", i);
+				return (-1);
+			}
+		}
 		i++;
 	}
 	return (0);
 }
 
-/*int main() {
-	int result = ft_strncmp("test\200", "test\0", 6);
+int main() {
+	int result = ft_strncmp("\x12\xff\x65\x12\xbd\xde\xad", "\x12\x02", 6);
 
     if (result == 0) {
         printf("The strings are equal.\n");
@@ -41,4 +54,4 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
     }
 
     return 0;
-}*/
+}
