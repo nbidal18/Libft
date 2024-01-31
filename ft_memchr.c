@@ -6,11 +6,12 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 10:01:54 by nbidal            #+#    #+#             */
-/*   Updated: 2024/01/31 14:15:54 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/01/31 14:57:20 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+//#include <stdio.h>
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
@@ -22,13 +23,21 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	c = (unsigned char)c;
 	if (n == 0)
 		return (NULL);
-	if (s2[i] == '\0')
-		return (s2 + i);
-	while (i < n - 1 && s2[i] != '\0')
+	while (i < n)
 	{
-		if (s2[i] == c)
+		if (s2[i] == c || (c == '\0' && s2[i] == '\0'))
 			return (s2 + i);
 		i++;
 	}
 	return (NULL);
 }
+
+/*int	main()
+{
+	char s[] = {0, 1, 2 ,3 ,4 ,5};
+	const void	*result = ft_memchr(s, 2, 3);
+	if (result != NULL)
+		printf("found");
+	else
+		printf("not found");
+}*/
