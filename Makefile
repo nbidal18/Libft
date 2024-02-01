@@ -23,6 +23,7 @@ $(NAME): $(MANDATORY_OBJECTS)
 #-o $@ specifies the output with an automatic variable representing the target of the rule (.o)
 %.o: %.c ${HEADER}
 	$(CC) $(FLAGS) -c $< -o $@
+	@echo "compiled"
 
 clean:
 #eventually will become #rm -f $(MANDATORY_OBJECTS) $(BONUS_OBJECTS)
