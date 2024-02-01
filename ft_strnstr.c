@@ -6,11 +6,12 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 16:17:14 by nbidal            #+#    #+#             */
-/*   Updated: 2024/02/01 17:59:32 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/02/01 18:41:57 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 /*int	ft_strlen(const char *s)
 {
@@ -24,45 +25,14 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t	i;
-	size_t	j;
-	char	*start;
-
-	i = 0;
-	j = 0;
-	if (len == (size_t)-1)
-		len = ft_strlen(haystack);
-	if (needle[i] == '\0')
-		return ((char *)haystack);
-	while (j < len && (needle[i] != '\0' && haystack[j] != '\0'))
-	{
-		if (needle[i] == haystack[j])
-		{
-            if (i == 0)
-                start = (char *)haystack + j;
-            i++;
-            if (needle[i] == '\0')
-                return start;
-        } 
-		else 
-		{
-            if (i > 0) {
-                j = j - i;
-                i = 0;
-            }
-            start = NULL;
-        }
-        j++;
-	}
-	if ((size_t)ft_strlen(needle) == i)
-		return (start);
-	return (NULL);
+	if (len)
+		return (0);
 }
 
 /*int main()
 {
-	char * big = "aaabcabcd";
-	char * little = "aabc";
+	char * big = "aaaabcabcd";
+	char * little = "aaabc";
 	size_t max = -1;
 	char *result = ft_strnstr(big, little, max);
 	if(result != NULL)
