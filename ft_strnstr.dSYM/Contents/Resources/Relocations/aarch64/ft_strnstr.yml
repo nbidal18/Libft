@@ -1,0 +1,9 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/nizarbidal/Documents/coding/gitsync/libft/ft_strnstr'
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _ft_strlen, symObjAddr: 0x0, symBinAddr: 0x100003CA0, symSize: 0x48 }
+  - { offsetInCU: 0x58, offset: 0x58, size: 0x8, addend: 0x0, symName: _ft_strlen, symObjAddr: 0x0, symBinAddr: 0x100003CA0, symSize: 0x48 }
+  - { offsetInCU: 0x8E, offset: 0x8E, size: 0x8, addend: 0x0, symName: _ft_strnstr, symObjAddr: 0x48, symBinAddr: 0x100003CE8, symSize: 0x1C0 }
+  - { offsetInCU: 0xFC, offset: 0xFC, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x208, symBinAddr: 0x100003EA8, symSize: 0xB4 }
+...
