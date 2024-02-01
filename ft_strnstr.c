@@ -6,15 +6,21 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 16:17:14 by nbidal            #+#    #+#             */
-/*   Updated: 2024/02/01 16:38:41 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/02/01 17:59:32 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-//lorem
-//lorem ipsum dolor sit amet
+/*int	ft_strlen(const char *s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	return (i);
+}*/
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
@@ -30,20 +36,30 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		return ((char *)haystack);
 	while (j < len && (needle[i] != '\0' && haystack[j] != '\0'))
 	{
-		if (i > 0 && needle[i] != haystack[j])
-			i = 0;
 		if (needle[i] == haystack[j])
-			i++;
-		if (i == 1)
-			start = (char *)haystack + j;
-		j++;
+		{
+            if (i == 0)
+                start = (char *)haystack + j;
+            i++;
+            if (needle[i] == '\0')
+                return start;
+        } 
+		else 
+		{
+            if (i > 0) {
+                j = j - i;
+                i = 0;
+            }
+            start = NULL;
+        }
+        j++;
 	}
 	if ((size_t)ft_strlen(needle) == i)
 		return (start);
 	return (NULL);
 }
 
-int main()
+/*int main()
 {
 	char * big = "aaabcabcd";
 	char * little = "aabc";
@@ -53,4 +69,4 @@ int main()
 		printf("found, %c\n", *result);
 	else if (result == NULL)
 		printf("not found\n");
-}
+}*/
