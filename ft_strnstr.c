@@ -6,12 +6,12 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 16:17:14 by nbidal            #+#    #+#             */
-/*   Updated: 2024/02/01 18:41:57 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/02/01 18:58:36 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+//#include <stdio.h>
 
 /*int	ft_strlen(const char *s)
 {
@@ -25,18 +25,34 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	if (len)
-		return (0);
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	if (needle[0] == '\0')
+		return ((char *)haystack);
+	while (haystack[i] && i < len)
+	{
+		j = 0;
+		while (haystack[i + j] == needle[j] && (i + j) < len)
+		{
+			if (needle[j + 1] == '\0')
+				return ((char *)&haystack[i]);
+			j++;
+		}
+		i++;
+	}
+	return (NULL);
 }
 
 /*int main()
 {
-	char * big = "aaaabcabcd";
-	char * little = "aaabc";
+	char * big = "aaabcabcd";
+	char * little = "aabc";
 	size_t max = -1;
 	char *result = ft_strnstr(big, little, max);
 	if(result != NULL)
-		printf("found, %c\n", *result);
+		printf("found, %s\n", result);
 	else if (result == NULL)
 		printf("not found\n");
 }*/
