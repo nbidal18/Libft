@@ -6,7 +6,7 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 12:02:48 by nbidal            #+#    #+#             */
-/*   Updated: 2024/02/06 08:55:57 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/02/12 15:12:34 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	lens = ft_strlen(s);
 	if (start > (unsigned int)ft_strlen(s))
 	{
-		substr = malloc(1 + sizeof(char));
+		substr = malloc(1 * sizeof(char));
 		if (substr == NULL)
 			return (NULL);
 		substr[0] = '\0';

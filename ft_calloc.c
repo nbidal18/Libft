@@ -6,7 +6,7 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 10:51:25 by nbidal            #+#    #+#             */
-/*   Updated: 2024/02/05 11:13:32 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/02/12 14:37:26 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	void	*ptr;
 
-	ptr = (void *)malloc(count * sizeof(size));
+	ptr = malloc(count * size);
 	if (ptr != NULL)
 		ft_memset(ptr, 0, count * size);
 	return (ptr);
