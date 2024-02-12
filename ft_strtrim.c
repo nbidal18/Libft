@@ -6,7 +6,7 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 15:19:46 by nbidal            #+#    #+#             */
-/*   Updated: 2024/02/12 16:17:19 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/02/12 16:40:21 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,49 +16,42 @@
 ’s1’ with the characters specified in ’set’ removed
 from the beginning and the end of the string.*/
 
-int	check(char *c, char *set)
+int	check(char c, const char *set)
 {
-	int	i;
-
-	i = 0;
-	while (set[i] != '\0')
+	while (*set != '\0')
 	{
-		if (*c == set[i])
+		if (c == *set)
 			return (1);
-		i++;
+		set++;
 	}
 	return (0);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(const char *s1, const char *set)
 {
 	char	*result;
-	int		i;
-	int		j;
 	int		len;
 
-	i = 0;
-	j = 0;
-	len = 0;
-	while (s1[i] != '\0')
+	if (s1 == NULL || set == NULL)
+		return (NULL);
+	while (*s1 != '\0')
 	{
 		len++;
-		if (check((char *)&s1[i], (char *)set) == 1)
+		if (check(*s1, set) == 1)
 			len--;
 	}
 	result = malloc((len + 1) * sizeof(char));
 	if (result == NULL)
 		return (NULL);
-	i = 0;
-	while (s1[i] != '\0')
+	while (*s1 != '\0')
 	{
-		if (check((char *)&s1[i], (char *)set) == 0)
+		if (check(*s1, set) == 0)
 		{
-			result[j] = s1[i];
-			j++;
+			*result = *s1;
+			result++;
 		}
-		i++;
+		s1++;
 	}
-	result[j] = '\0';
+	*result = '\0';
 	return (result);
 }
