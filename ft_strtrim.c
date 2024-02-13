@@ -6,7 +6,7 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 15:19:46 by nbidal            #+#    #+#             */
-/*   Updated: 2024/02/12 16:40:21 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/02/13 14:25:09 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,20 @@ char	*ft_strtrim(const char *s1, const char *set)
 {
 	char	*result;
 	int		len;
+	int		i;
 
 	if (s1 == NULL || set == NULL)
 		return (NULL);
-	while (*s1 != '\0')
+	i = 0;
+	len = 0;
+	while (s1[i] != '\0')
 	{
 		len++;
-		if (check(*s1, set) == 1)
+		if (check(s1[i], set) == 1)
 			len--;
+		i++;
 	}
+	i = 0;
 	result = malloc((len + 1) * sizeof(char));
 	if (result == NULL)
 		return (NULL);
@@ -47,11 +52,17 @@ char	*ft_strtrim(const char *s1, const char *set)
 	{
 		if (check(*s1, set) == 0)
 		{
-			*result = *s1;
-			result++;
+			result[i] = *s1;
+			i++;
 		}
 		s1++;
 	}
-	*result = '\0';
+	result[i] = '\0';
 	return (result);
 }
+
+/*int main()
+{
+	char *result = ft_strtrim(" lorem ipsum dolor sit amet", "l ");
+	printf("result: %s", result);
+}*/
