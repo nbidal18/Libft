@@ -6,7 +6,7 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 11:13:57 by nbidal            #+#    #+#             */
-/*   Updated: 2024/02/14 12:04:11 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/02/15 07:47:35 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int	safe_malloc(char **substr, int position, size_t len)
 	substr[position] = malloc(len);
 	if (substr[position] == NULL)
 	{
-		while (substr[i++] != NULL)
-			free(substr[i]);
+		while (substr[i] != NULL)
+			free(substr[i++]);
 		free(substr);
 		return (1);
 	}
@@ -39,57 +39,62 @@ int	fill(char **substr, char const *string, char delimiter)
 		len = 0;
 		while (*string == delimiter && *string)
 			string++;
-		while (*string++ != delimiter && *string)
+		while (*string != delimiter && *string)
+		{
 			len++;
+			string++;
+		}
 		if (len)
 		{
-			if (safe_malloc(substr, i, len + 1) == 1)
+			if (safe_malloc(substr, i, len + 1))
 				return (1);
+			ft_strlcpy(substr[i], string - len, len + 1);
 		}
-		ft_strlcpy(substr[i], string - len - 1, len + 1);
 		i++;
 	}
 	return (0);
 }
 
-size_t	count_words(char const *string, char delimiter)
+size_t	count_n_substr(char const *string, char delimiter)
 {
-	size_t	n_words;
-	int		inside_word;
+	size_t	tokens;
+	int		inside_token;
 
-	n_words = 0;
+	tokens = 0;
 	while (*string)
 	{
-		inside_word = 0;
+		inside_token = 0;
 		while (*string == delimiter && *string)
 			string++;
-		while (*string++ != delimiter && *string)
+		while (*string != delimiter && *string)
 		{
-			if (inside_word == 0)
+			if (!inside_token)
 			{
-				n_words++;
-				inside_word = 1;
+				tokens++;
+				inside_token = 1;
 			}
+			string++;
 		}
 	}
-	return (n_words);
+	return (tokens);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	size_t	n_words;
-	char	**substr;
+	size_t	n_substr;
+	char	**substr_v;
 
 	if (s == NULL)
 		return (NULL);
-	n_words = count_words(s, c);
-	substr = malloc((n_words + 1) * sizeof(char *));
-	if (substr == NULL)
+	n_substr = 0;
+	n_substr = count_n_substr(s, c);
+	substr_v = malloc((n_substr + 1) * sizeof(char *));
+	if (substr_v == NULL)
 		return (NULL);
-	substr[n_words] = NULL;
-	if (fill(substr, s, c) == 1)
+	substr_v[n_substr] = NULL;
+	if (fill(substr_v, s, c))
 		return (NULL);
-	return (substr);
+	return (substr_v);
 }
 
 /*int main()
