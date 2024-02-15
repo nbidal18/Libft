@@ -6,59 +6,37 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 15:19:46 by nbidal            #+#    #+#             */
-/*   Updated: 2024/02/13 14:25:09 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/02/15 08:43:58 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*Allocates (with malloc(3)) and returns a copy of
-’s1’ with the characters specified in ’set’ removed
-from the beginning and the end of the string.*/
-
-int	check(char c, const char *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	while (*set != '\0')
-	{
-		if (c == *set)
-			return (1);
-		set++;
-	}
-	return (0);
-}
-
-char	*ft_strtrim(const char *s1, const char *set)
-{
-	char	*result;
+	int		start;
+	int		end;
+	char	*trimmed;
 	int		len;
-	int		i;
 
 	if (s1 == NULL || set == NULL)
 		return (NULL);
-	i = 0;
-	len = 0;
-	while (s1[i] != '\0')
-	{
-		len++;
-		if (check(s1[i], set) == 1)
-			len--;
-		i++;
-	}
-	i = 0;
-	result = malloc((len + 1) * sizeof(char));
-	if (result == NULL)
+	if (!*s1)
+		return (ft_strdup(s1));
+	start = 0;
+	end = ft_strlen(s1) - 1;
+	while (*(s1 + start) && ft_strchr(set, *(s1 + start)))
+		start++;
+	while (end >= 0 && ft_strchr(set, *(s1 + end)))
+		end--;
+	if (start > end)
+		return (ft_strdup(""));
+	len = (end - start) + 2;
+	trimmed = malloc(len);
+	if (trimmed == NULL)
 		return (NULL);
-	while (*s1 != '\0')
-	{
-		if (check(*s1, set) == 0)
-		{
-			result[i] = *s1;
-			i++;
-		}
-		s1++;
-	}
-	result[i] = '\0';
-	return (result);
+	ft_strlcpy(trimmed, s1 + start, len);
+	return (trimmed);
 }
 
 /*int main()
