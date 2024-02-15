@@ -6,12 +6,11 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 09:50:28 by nbidal            #+#    #+#             */
-/*   Updated: 2024/02/05 10:48:15 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/02/15 09:06:42 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-//#include <stdio.h>
 
 int	ft_atoi(const char *str)
 {

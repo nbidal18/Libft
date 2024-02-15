@@ -6,13 +6,13 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 11:13:57 by nbidal            #+#    #+#             */
-/*   Updated: 2024/02/15 07:47:35 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/02/15 09:07:54 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	safe_malloc(char **substr, int position, size_t len)
+static int	safe_malloc(char **substr, int position, size_t len)
 {
 	int	i;
 
@@ -28,7 +28,7 @@ int	safe_malloc(char **substr, int position, size_t len)
 	return (0);
 }
 
-int	fill(char **substr, char const *string, char delimiter)
+static int	fill(char **substr, char const *string, char delimiter)
 {
 	size_t	len;
 	int		i;
@@ -55,7 +55,7 @@ int	fill(char **substr, char const *string, char delimiter)
 	return (0);
 }
 
-size_t	count_n_substr(char const *string, char delimiter)
+static size_t	count_n_substr(char const *string, char delimiter)
 {
 	size_t	tokens;
 	int		inside_token;

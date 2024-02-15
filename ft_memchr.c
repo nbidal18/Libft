@@ -6,12 +6,11 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 10:01:54 by nbidal            #+#    #+#             */
-/*   Updated: 2024/01/31 14:57:20 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/02/15 09:07:08 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {

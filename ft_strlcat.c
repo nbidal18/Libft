@@ -6,24 +6,11 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:59:58 by nbidal            #+#    #+#             */
-/*   Updated: 2024/01/31 09:59:16 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/02/15 09:09:57 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include "stdio.h"
-
-/*
-int	ft_strlen(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
-}
-*/
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
@@ -59,5 +46,4 @@ int main()
 	printf("Original dst: %s\n", dst);
 	size_t result = ft_strlcat(dst, "AAAAAAAAA", -1);
 	printf("Tried to copy %zu characters, Modified dst: %s\n", result, dst);
-}
-*/
+}*/

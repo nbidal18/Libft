@@ -6,23 +6,11 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 15:58:36 by nbidal            #+#    #+#             */
-/*   Updated: 2024/01/31 09:58:59 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/02/15 09:10:22 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-/*
-int	ft_strlen(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
-}
-*/
 
 char	*ft_strrchr(const char *s, int c)
 {
