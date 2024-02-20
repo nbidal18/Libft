@@ -6,7 +6,7 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 10:05:21 by nbidal            #+#    #+#             */
-/*   Updated: 2024/02/20 10:14:19 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/02/20 10:38:17 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_putendl_fd(char *s, int fd)
 	{
 		len = ft_strlen(s);
 		newline = '\n';
-		while (len > 0 && *s != '\0')
+		while (len-- > 0 && *s != '\0')
 		{
 			write(fd, s, 1);
 			s++;
