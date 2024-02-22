@@ -6,7 +6,7 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 19:16:38 by nbidal            #+#    #+#             */
-/*   Updated: 2024/02/22 15:43:24 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/02/22 17:16:58 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,5 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 void	ft_putchar_fd(char c, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+void	ft_putstr_fd(char *s, int fd);
 #endif
