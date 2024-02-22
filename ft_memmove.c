@@ -6,39 +6,42 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 19:16:57 by nbidal            #+#    #+#             */
-/*   Updated: 2024/01/31 09:59:39 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/02/22 17:13:53 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char		*d;
-	const char	*s;
-	char		tmp;
-	size_t		i;
+	unsigned char	*d;
+	unsigned char	*s;
+	size_t			i;
 
-	d = dst;
-	s = src;
+	d = (unsigned char *)dest;
+	s = (unsigned char *)src;
 	i = 0;
-	while ((i < len) && (s[i] != '\0') && (d[i] != '\0'))
+	if (!d && !s)
+		return (NULL);
+	if (d > s && d < s + n)
 	{
-		tmp = s[i];
-		d[i] = tmp;
-		i++;
+		while (n--)
+			d[n] = s[n];
 	}
-	return (dst);
+	else
+	{
+		while (i < n)
+		{
+			d[i] = s[i];
+			i++;
+		}
+	}
+	return (dest);
 }
 
-/*
-int main()
+/*int main()
 {
-    char array1[20] = "Hello, World!";
-    char array2[20] = "Ciao, Mondo!";
-	printf("dst prima: %s\n", array2);
-	char *result = ft_memmove(array2, array1, 2);
-    printf("dst dopo: %s\n", result);
-    return 0;
-}
-*/
+	char	*dest[8];
+	char	*src = "lorem ipum dolor sit a";
+	ft_memmove(dest, src, 8);
+}*/
