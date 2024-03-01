@@ -6,7 +6,7 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 19:16:57 by nbidal            #+#    #+#             */
-/*   Updated: 2024/02/22 17:13:53 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/03/01 13:12:22 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,3 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-
-/*int main()
-{
-	char	*dest[8];
-	char	*src = "lorem ipum dolor sit a";
-	ft_memmove(dest, src, 8);
-}*/

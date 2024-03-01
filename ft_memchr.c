@@ -6,7 +6,7 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 10:01:54 by nbidal            #+#    #+#             */
-/*   Updated: 2024/02/15 09:07:08 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/03/01 13:12:07 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,3 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
-
-/*int	main()
-{
-	char s[] = {0, 1, 2 ,3 ,4 ,5};
-	const void	*result = ft_memchr(s, 2, 3);
-	if (result != NULL)
-		printf("found");
-	else
-		printf("not found");
-}*/

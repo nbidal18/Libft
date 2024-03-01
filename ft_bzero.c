@@ -6,7 +6,7 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 19:17:13 by nbidal            #+#    #+#             */
-/*   Updated: 2024/01/31 09:59:21 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/03/01 13:11:16 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,3 @@ void	ft_bzero(void *s, size_t n)
 		t++;
 	}
 }
-
-/*
-int main()
-{
-    char array[20] = "Hello, World!";
-    printf("Array prima: %s\n", array);
-	ft_bzero(array, 3);
-    printf("Array dopo: %s\n", array);
-    return 0;
-}
-*/
