@@ -6,7 +6,7 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 08:47:43 by nbidal            #+#    #+#             */
-/*   Updated: 2024/03/01 13:12:02 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/02/15 10:28:52 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,3 +52,9 @@ char	*ft_itoa(int n)
 	}
 	return (string);
 }
+
+/*int	main()
+{
+	char *result = ft_itoa(23);
+	printf("%s", result);
+}*/

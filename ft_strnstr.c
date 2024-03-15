@@ -6,7 +6,7 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 16:17:14 by nbidal            #+#    #+#             */
-/*   Updated: 2024/03/01 13:13:42 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/02/15 09:10:15 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,3 +33,15 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (NULL);
 }
+
+/*int main()
+{
+	char * big = "aaabcabcd";
+	char * little = "aabc";
+	size_t max = -1;
+	char *result = ft_strnstr(big, little, max);
+	if(result != NULL)
+		printf("found, %s\n", result);
+	else if (result == NULL)
+		printf("not found\n");
+}*/

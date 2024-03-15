@@ -6,7 +6,7 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 11:13:57 by nbidal            #+#    #+#             */
-/*   Updated: 2024/03/01 13:12:56 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/02/15 09:07:54 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,3 +96,11 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	return (substr_v);
 }
+
+/*int main()
+{
+	char **result = ft_split("___Hello_there,_dude!!", '_');
+
+	while (*result)
+		printf("%s\n", *result++);
+}*/

@@ -6,7 +6,7 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 10:19:33 by nbidal            #+#    #+#             */
-/*   Updated: 2024/03/01 13:12:42 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/02/22 15:14:48 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,3 +37,11 @@ void	ft_putnbr_fd(int n, int fd)
 	while (i >= 0)
 		write (fd, &str[i--], 1);
 }
+
+/*int main(int argc, char **argv)
+{
+	if (argc < 1)
+		return (0);
+	int nbr = ft_atoi(argv[1]);
+	ft_putnbr_fd(nbr, 1);
+}*/

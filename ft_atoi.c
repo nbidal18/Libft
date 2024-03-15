@@ -6,7 +6,7 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 09:50:28 by nbidal            #+#    #+#             */
-/*   Updated: 2024/03/01 13:11:18 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/02/15 09:06:42 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,3 +38,13 @@ int	ft_atoi(const char *str)
 		return (result * sign);
 	return (result);
 }
+
+/*int main(void)
+{
+    const char *testString = "-4886";
+
+    int result = ft_atoi(testString);
+    printf("Input: \"%s\"  |  Output: %d\n", testString, result);
+
+    return 0;
+}*/

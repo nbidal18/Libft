@@ -6,7 +6,7 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 15:19:46 by nbidal            #+#    #+#             */
-/*   Updated: 2024/03/01 13:13:49 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/02/15 08:43:58 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,3 +38,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	ft_strlcpy(trimmed, s1 + start, len);
 	return (trimmed);
 }
+
+/*int main()
+{
+	char *result = ft_strtrim(" lorem ipsum dolor sit amet", "l ");
+	printf("result: %s", result);
+}*/

@@ -6,7 +6,7 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 19:17:04 by nbidal            #+#    #+#             */
-/*   Updated: 2024/03/01 13:11:49 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/01/31 09:59:31 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,3 +18,13 @@ int	ft_isdigit(int c)
 		return (1);
 	return (0);
 }
+
+/*
+int main()
+{
+	char c = 'h';
+	int result = ft_isdigit(c);
+	printf("Result: %d\n", result);
+	return 0;
+}
+*/

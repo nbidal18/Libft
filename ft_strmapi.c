@@ -6,7 +6,7 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 08:22:22 by nbidal            #+#    #+#             */
-/*   Updated: 2024/03/01 13:13:32 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/02/19 08:56:22 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,3 +31,9 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	result[i] = '\0';
 	return (result);
 }
+
+/*int main()
+{
+	int *result = ft_strmapi("C1A0 M0ndO", ft_tolower);
+	printf("%s\n", result);
+}*/
