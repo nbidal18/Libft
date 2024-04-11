@@ -7,7 +7,7 @@ BONUS_SOURCES = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstad
 MANDATORY_OBJECTS = $(MANDATORY_SOURCES:.c=.o)
 BONUS_OBJECTS = $(BONUS_SOURCES:.c=.o)
 HEADER = libft.h
-
+a
 all: $(NAME)
 
 #ranlib adds an index to the .a, done automatically by ar on modern system but not always on older ones
