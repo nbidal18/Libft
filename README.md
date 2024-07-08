@@ -7,4 +7,4 @@
 There's no main to run as this is basically just to have quick access to common functions. If you want to try any of these, just copy paste them in your code.
 
 ## Grade
-I didn't do the Bonus part so I got **100**.
+I only did the Mandatory part so I got **100**.
